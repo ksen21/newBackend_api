@@ -7,8 +7,7 @@
 
 
 
-
-
+require('dotenv').config()
 const express = require('express');
 // const dbConnect = require('./mongodb');
 
@@ -18,13 +17,18 @@ const mongoose = require('mongoose');
 
 const port  = process.env.PORT || 5000
 
+const mongoUrl = process.env.DATABASE
+
+const BASE_URL = process.env.BASE_URL
+
 // const bcrypt = require('bcryptjs')
 
 app.use(express.urlencoded());
 app.use(express.json());
 app.use(cors())
 app.use(express.urlencoded({ extended: true }));
-const mongoUrl = "mongodb://0.0.0.0:27017/newLoginAndRegister";
+
+
 
 // require('./UserDetails.js');
 
