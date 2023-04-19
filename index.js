@@ -66,7 +66,7 @@ app.get('/', (req, res) => {
 });
 
 
-app.post('/signup', async (req, res) => {
+app.post('/api/signup', async (req, res) => {
     // const salt = await bcrypt.genSalt(10); 
     // const secPass = await bcrypt.hash(req.body.pass,salt) 
 
@@ -108,7 +108,7 @@ app.post('/signup', async (req, res) => {
 // console.log(req.body);
 
 
-app.post('/login', async (req, res) => {
+app.post('/api/login', async (req, res) => {
 
 
     const { email, pass } = req.body;
