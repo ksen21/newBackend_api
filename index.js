@@ -18,6 +18,7 @@ const mongoose = require('mongoose');
 const port  = process.env.PORT || 5000
 
 const mongoUrl = process.env.DATABASE
+console.log(mongoUrl);
 
 const BASE_URL = process.env.BASE_URL
 
@@ -33,8 +34,9 @@ app.use(express.urlencoded({ extended: true }));
 // require('./UserDetails.js');
 
 
-mongoose.connect(mongoUrl, {
+mongoose.connect(`${mongoUrl}`, {
     useNewUrlParser: true,
+    useUnifiedTopology: true
 }).then(() => {
     console.log("Connected to database")
 })
